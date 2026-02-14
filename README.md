@@ -2,54 +2,54 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# Employee-Monitoring App 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: Shrubs
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: Shreshta Brijesh - Rajiv Gandhi Institute of Technology
+- Member 2: Abeer Mohammed Shajahan - Rajiv Gandhi Institute of Technology 
 
 ### Hosted Project Link
-[mention your project hosted link here]
+
 
 ### Project Description
-[2-3 lines about what your project does]
+This is a  web application designed to help employers monitor employee activity and manage tasks efficiently. The platform provides separate dashboards for employers and employees with secure role-based authentication.
 
 ### The Problem statement
-[What problem are you solving?]
+In remote and hybrid work environments, employers struggle to effectively monitor employee productivity and track task progress in real time. Existing solutions often lack integration between task management and activity monitoring, leading to reduced accountability and transparency.
+
+There is a need for a unified platform that combines task assignment, performance tracking, and real-time activity monitoring in a secure and structured system.
 
 ### The Solution
-[How are you solving it?]
+The proposed solution is a  web application that integrates task management and real-time activity monitoring into a single platform.
 
----
+The system provides separate dashboards for employers and employees, enabling secure role-based access. Employers can assign tasks, monitor work activity through real-time alerts, and evaluate employee performance using productivity metrics. Employees can view assigned tasks, update progress, and track their performance transparently.
+
+By combining monitoring, task tracking, and performance evaluation in one system, the platform improves productivity, accountability, and workflow efficiency within organizations.
 
 ## Technical Details
 
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: HTML,CSS,Javascript
+- Frameworks used: Express,Mongoose
+- Database-No SQL Database MongoDb
+- Tools used: VS
 
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
-
----
 
 ## Features
 
-List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+Feature 1: Role-Based Authentication – Secure login and registration system for employers and employees using JWT-based access control.
+
+Feature 2: Task Management System – Employers can assign tasks with deadlines, and employees can update task status in real time.
+
+Feature 3: Real-Time Activity Monitoring – Employers receive instant alerts when employees switch to non-work-related tabs during work hours.
+
+Feature 4: Performance & Productivity Tracking – The system evaluates employee performance based on task completion and activity metrics, visible to both employer and employee for transparency.
 
 ---
 
@@ -59,334 +59,81 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+npm install express mongoose axios 
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+npm start
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
-
----
 
 ## Project Documentation
 
 ### For Software:
 
-#### Screenshots (Add at least 3)
+#### Screenshots 
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+Login Page
+<img width="1405" height="888" alt="image" src="https://github.com/user-attachments/assets/5e568598-7405-4cd5-96d0-daf3968f8d89" />
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Employee Dashboard
+<img width="1600" height="771" alt="image" src="https://github.com/user-attachments/assets/71b32e72-fa48-40f8-831b-3b8a8eb525a4" />
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+Employer Dashboard
+<img width="1600" height="778" alt="image" src="https://github.com/user-attachments/assets/307dbe29-425a-429b-a4be-9a9f3ba23aa2" />
 
 #### Diagrams
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
+![employee-monitoring-flow](https://github.com/user-attachments/assets/fd103197-6ee2-4cc9-b47b-0b7b670a004c)
+
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+![employee-monitoring-flow](https://github.com/user-attachments/assets/da2c887d-4581-4449-9053-5e1dfd574f44)
+
 
 ---
 
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
 
 #### Build Photos
 
-![Team](Add photo of your team here)
 
-![Components](Add photo of your components here)
-*List out all components shown*
+![Build]
 
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
+<img width="1405" height="888" alt="image" src="https://github.com/user-attachments/assets/8b5b5d28-bd00-4b6a-a00d-b71b9d95612d" />
+<img width="1600" height="778" alt="image" src="https://github.com/user-attachments/assets/695fed3e-de3a-420f-a1e2-aeff23f94e60" />
+<img width="1600" height="782" alt="image" src="https://github.com/user-attachments/assets/f46a06ac-7984-4523-a6be-84217186137f" />
 
 ---
 
-## Additional Documentation
 
-### For Web Projects with Backend:
-
-#### API Documentation
-
-**Base URL:** `https://api.yourproject.com`
-
-##### Endpoints
-
-**GET /api/endpoint**
-- **Description:** [What it does]
-- **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
-- **Response:**
-```json
-{
-  "status": "success",
-  "data": {}
-}
-```
-
-**POST /api/endpoint**
-- **Description:** [What it does]
-- **Request Body:**
-```json
-{
-  "field1": "value1",
-  "field2": "value2"
-}
-```
-- **Response:**
-```json
-{
-  "status": "success",
-  "message": "Operation completed"
-}
-```
-
-[Add more endpoints as needed...]
-
----
-
-### For Mobile Apps:
-
-#### App Flow Diagram
-
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
-
-#### Installation Guide
-
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
-
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
-
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
-
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
-```
-
----
-
-### For Hardware Projects:
-
-#### Bill of Materials (BOM)
-
-| Component | Quantity | Specifications | Price | Link/Source |
-|-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
-
-**Total Estimated Cost:** ₹[Amount]
-
-#### Assembly Instructions
-
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
-
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
-
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
-
-**Step 4: [Continue for all steps...]**
-
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
-
----
-
-### For Scripts/CLI Tools:
-
-#### Command Reference
-
-**Basic Usage:**
-```bash
-python script.py [options] [arguments]
-```
-
-**Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
-
-**Options:**
-- `-h, --help` - Show help message and exit
-- `-v, --verbose` - Enable verbose output
-- `-o, --output FILE` - Specify output file path
-- `-c, --config FILE` - Specify configuration file
-- `--version` - Show version information
-
-**Examples:**
-
-```bash
-# Example 1: Basic usage
-python script.py input.txt
-
-# Example 2: With verbose output
-python script.py -v input.txt
-
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
-
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
-```
-
-#### Demo Output
-
-**Example 1: Basic Processing**
-
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
-
----
 
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+https://drive.google.com/drive/folders/1AylJb9bW3ZuCFgN5rJnqophmOu_1jINi?usp=sharing
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+THis shows the employee dashboard with assigned tasks and employer dashboard from wheretasks are assigned.
 
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
-
----
 
 ## AI Tools Used (Optional - For Transparency Bonus)
 
 If you used AI tools during development, document them here for transparency:
+Chatgpt,Deepseek
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
-
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
+**Purpose:** 
+-  "Debugging assistance for async functions"
+- "Code review and optimization suggestions"
 
 **Key Prompts Used:**
 - "Create a REST API endpoint for user authentication"
 - "Debug this async function that's causing race conditions"
 - "Optimize this database query for better performance"
 
-**Percentage of AI-generated code:** [Approximately X%]
+**Percentage of AI-generated code:** 50 percentage
 
 **Human Contributions:**
 - Architecture design and planning
@@ -394,26 +141,13 @@ If you used AI tools during development, document them here for transparency:
 - Integration and testing
 - UI/UX design decisions
 
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
-
 ---
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- Abeer Mohammed Shajahan: Frontend,GUI and Backend
+- Shreshta Brijesh: Database , GUI and Backend 
 
----
-
-## License
-
-This project is licensed under the [LICENSE_NAME] License - see the [LICENSE](LICENSE) file for details.
-
-**Common License Options:**
-- MIT License (Permissive, widely used)
-- Apache 2.0 (Permissive with patent grant)
-- GPL v3 (Copyleft, requires derivative works to be open source)
 
 ---
 
