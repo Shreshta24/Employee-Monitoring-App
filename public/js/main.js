@@ -1,5 +1,5 @@
 // API Base URL - make sure this matches your server
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://employee-monitoring-app.onrender.com/api';
 
 // Toggle between login and register forms
 function showRegister() {
