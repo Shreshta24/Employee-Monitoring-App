@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript Test Page</h1>
+    <select id="testSelect">
+        <option value="">Test Select</option>
+    </select>
+    
+    <script>
+        console.log('SIMPLE TEST PAGE LOADED');
+        console.log('Current time:', new Date());
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('SIMPLE DOMContentLoaded fired');
+            const select = document.getElementById('testSelect');
+            console.log('Select found:', !!select);
+            
+            if (select) {
+                const option = document.createElement('option');
+                option.value = 'test';
+                option.textContent = 'TEST OPTION';
+                select.appendChild(option);
+                console.log('Test option added successfully');
+            }
+        });
+    </script>
+</body>
+</html>

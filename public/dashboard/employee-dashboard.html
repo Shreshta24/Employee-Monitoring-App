@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <div class="user-info">
+                    <h2 id="userName">Welcome, Employee!</h2>
+                    <p id="userRole">Employee Dashboard</p>
+                </div>
+                <button onclick="logout()" class="btn btn-danger">Logout</button>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid" id="statsContainer">
+                    <div class="stat-card">
+                        <h3>Total Tasks</h3>
+                        <div class="stat-value" id="totalTasks">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completed</h3>
+                        <div class="stat-value" id="completedTasks">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>In Progress</h3>
+                        <div class="stat-value" id="inProgressTasks">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending</h3>
+                        <div class="stat-value" id="pendingTasks">0</div>
+                    </div>
+                </div>
+
+                <!-- Performance Section -->
+                <div class="section">
+                    <h3>Performance Overview</h3>
+                    <div class="stats-grid" id="performanceContainer">
+                        <div class="stat-card">
+                            <h3>Tasks Assigned</h3>
+                            <div class="stat-value" id="tasksAssigned">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Tasks Completed</h3>
+                            <div class="stat-value" id="tasksCompleted">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Completion Rate</h3>
+                            <div class="stat-value" id="completionRate">0%</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Performance Rating</h3>
+                            <div class="stat-value" id="performanceRating">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasks Section -->
+                <div class="section">
+                    <h3>My Tasks</h3>
+                    <div class="task-grid" id="tasksContainer">
+                        <!-- Tasks will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Status Modal -->
+    <div id="taskModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Update Task Status</h3>
+            <form id="taskStatusForm" onsubmit="event.preventDefault(); updateTaskStatus(event);">
+                <div class="form-group">
+                    <label for="taskStatus">Status</label>
+                    <select id="taskStatus" required>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Status</button>
+                <button type="button" onclick="closeTaskModal()" class="btn btn-secondary" style="margin-top: 10px;">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/employee-dashboard.js"></script>
+</body>
+</html>

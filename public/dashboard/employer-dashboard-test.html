@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <div class="user-info">
+                    <h2 id="userName">Welcome, Employer!</h2>
+                    <p id="userRole">Employer Dashboard</p>
+                </div>
+                <button onclick="logout()" class="btn btn-danger">Logout</button>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid" id="statsContainer">
+                    <div class="stat-card">
+                        <h3>Total Employees</h3>
+                        <div class="stat-value" id="totalEmployees">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Tasks</h3>
+                        <div class="stat-value" id="totalTasks">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completed Tasks</h3>
+                        <div class="stat-value" id="completedTasks">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Tasks</h3>
+                        <div class="stat-value" id="pendingTasks">0</div>
+                    </div>
+                </div>
+
+                <!-- Assign Task Section -->
+                <div class="section">
+                    <h3>Assign New Task</h3>
+                    <form id="assignTaskForm">
+                        <div class="form-group">
+                            <label for="taskTitle">Task Title</label>
+                            <input type="text" id="taskTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription">Description</label>
+                            <textarea id="taskDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskEmployee">Assign To</label>
+                            <select id="taskEmployee" required>
+                                <option value="">Select Employee</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDueDate">Due Date</label>
+                            <input type="date" id="taskDueDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Assign Task</button>
+                    </form>
+                </div>
+
+                <!-- Employees Section -->
+                <div class="section">
+                    <h3>Employees</h3>
+                    <div class="employee-list" id="employeesContainer">
+                        <!-- Employees will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Tasks Section -->
+                <div class="section">
+                    <h3>Assigned Tasks</h3>
+                    <div class="task-grid" id="tasksContainer">
+                        <!-- Tasks will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('TEST PAGE - INLINE SCRIPT LOADED');
+        
+        // Logout function
+        function logout() {
+            localStorage.clear();
+            window.location.href = '/';
+        }
+        
+        // Test API call
+        async function testAPI() {
+            try {
+                console.log('Making test API call...');
+                const response = await fetch('http://localhost:3000/api/test/employer-dashboard');
+                const data = await response.json();
+                console.log('Test API response:', data);
+                
+                if (data.employees && data.employees.length > 0) {
+                    console.log('Found employees:', data.employees);
+                    
+                    // Update stats
+                    document.getElementById('totalEmployees').textContent = data.employees.length;
+                    
+                    // Populate dropdown
+                    const select = document.getElementById('taskEmployee');
+                    select.innerHTML = '<option value="">Select Employee</option>';
+                    
+                    data.employees.forEach(emp => {
+                        const option = document.createElement('option');
+                        option.value = emp._id;
+                        option.textContent = `${emp.name} - ${emp.email}`;
+                        select.appendChild(option);
+                    });
+                    
+                    // Display employees
+                    const container = document.getElementById('employeesContainer');
+                    container.innerHTML = '';
+                    
+                    data.employees.forEach(emp => {
+                        const card = document.createElement('div');
+                        card.style.border = '1px solid #ccc';
+                        card.style.padding = '10px';
+                        card.style.margin = '10px 0';
+                        card.innerHTML = `
+                            <h4>${emp.name}</h4>
+                            <p>Email: ${emp.email}</p>
+                            <p>Department: ${emp.department || 'Not specified'}</p>
+                        `;
+                        container.appendChild(card);
+                    });
+                }
+            } catch (error) {
+                console.error('Test API error:', error);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('TEST PAGE - DOMContentLoaded fired');
+            testAPI();
+        });
+    </script>
+</body>
+</html>

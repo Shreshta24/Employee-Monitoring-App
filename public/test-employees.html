@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Employees</title>
+</head>
+<body>
+    <h1>Test Employee Loading</h1>
+    
+    <div>
+        <h2>Employee Dropdown:</h2>
+        <select id="taskEmployee">
+            <option value="">Select Employee</option>
+        </select>
+    </div>
+    
+    <div>
+        <h2>Employee List:</h2>
+        <div id="employeesContainer"></div>
+    </div>
+    
+    <div>
+        <h2>Debug Info:</h2>
+        <div id="debugInfo"></div>
+    </div>
+
+    <script>
+        async function testEmployeeLoading() {
+            console.log('Testing employee loading...');
+            
+            try {
+                const response = await fetch('http://localhost:3000/api/test/employer-dashboard');
+                const data = await response.json();
+                
+                console.log('Received data:', data);
+                
+                // Update debug info
+                document.getElementById('debugInfo').innerHTML = `
+                    <p><strong>Response status:</strong> ${response.status}</p>
+                    <p><strong>Employees data:</strong> ${JSON.stringify(data.employees, null, 2)}</p>
+                    <p><strong>Employees length:</strong> ${data.employees ? data.employees.length : 'undefined'}</p>
+                `;
+                
+                // Populate dropdown
+                populateEmployeeSelect(data.employees);
+                
+                // Display employees
+                displayEmployees(data.employees);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('debugInfo').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+        
+        function populateEmployeeSelect(employees) {
+            console.log('Populating employee select with:', employees);
+            
+            const select = document.getElementById('taskEmployee');
+            if (!select) {
+                console.error('Employee select not found!');
+                return;
+            }
+            
+            // Clear dropdown
+            select.innerHTML = '';
+            
+            // Add default option
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = '-- Select an Employee --';
+            defaultOption.selected = true;
+            select.appendChild(defaultOption);
+            
+            // Check if employees exist
+            if (!employees || employees.length === 0) {
+                console.log('No employees found');
+                const noOption = document.createElement('option');
+                noOption.value = '';
+                noOption.textContent = 'No employees registered';
+                noOption.disabled = true;
+                select.appendChild(noOption);
+                return;
+            }
+            
+            // Add employees
+            for (let i = 0; i < employees.length; i++) {
+                const emp = employees[i];
+                console.log(`Adding: ${emp.name} (${emp._id})`);
+                
+                const option = document.createElement('option');
+                option.value = emp._id;
+                option.textContent = `${emp.name} - ${emp.email}`;
+                select.appendChild(option);
+            }
+            
+            console.log(`Added ${employees.length} employees to dropdown`);
+        }
+        
+        function displayEmployees(employees) {
+            const container = document.getElementById('employeesContainer');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            if (!employees || employees.length === 0) {
+                container.innerHTML = '<p>No employees registered yet.</p>';
+                return;
+            }
+            
+            for (let i = 0; i < employees.length; i++) {
+                const emp = employees[i];
+                const card = document.createElement('div');
+                card.style.border = '1px solid #ccc';
+                card.style.padding = '10px';
+                card.style.margin = '10px 0';
+                card.innerHTML = `
+                    <h4>${emp.name}</h4>
+                    <p>Email: ${emp.email}</p>
+                    <p>Department: ${emp.department || 'Not specified'}</p>
+                    <p>ID: ${emp._id}</p>
+                `;
+                container.appendChild(card);
+            }
+        }
+        
+        // Test when page loads
+        document.addEventListener('DOMContentLoaded', testEmployeeLoading);
+    </script>
+</body>
+</html>
