@@ -1,5 +1,7 @@
 // API Base URL
-const API_URL = 'http://localhost:3000/api';
+// const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://employee-monitoring-app.onrender.com';
+
 
 console.log('EMPLOYER DASHBOARD JS LOADED - VERSION 2.0');
 
