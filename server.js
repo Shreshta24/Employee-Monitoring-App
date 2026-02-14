@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const allowedOrigins = [
     'http://localhost:3000',
+    'https://employee-monitoring-app.vercel.app',
     'https://employee-monitoring-app.onrender.com'
 ];
 
